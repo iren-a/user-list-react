@@ -1,0 +1,42 @@
+{
+  "name": "user-list-react",
+  "version": "1.0.0",
+  "description": "Приложение для просмотра и редактирования данных пользователей (ReactJS)",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iren-a/user-list-react.git"
+  },
+  "author": "iren-a",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iren-a/user-list-react/issues"
+  },
+  "homepage": "https://github.com/iren-a/user-list-react#readme",
+  "dependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "create-react-class": "^15.6.3",
+    "css-loader": "^1.0.0",
+    "firebase": "^5.5.1",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "path": "^0.12.7",
+    "re-base": "^4.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-fire": "^1.1.2",
+    "react-mixin": "^4.0.0",
+    "reactfire": "^1.0.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.9"
+  }
+}
