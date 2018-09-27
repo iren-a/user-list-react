@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom';
 import firebase from 'firebase';
 import Header from './Header';
 import UserList from './UserList';
+import UserControl from './UserControl';
+import ErrorBoundary from './ErrorBoundary';
 import style from './../less/style.less'
+
 
 const config = {
     apiKey: 'AIzaSyC6sjHpeyIvisGIG844B-YgAfXk8AQKnyY',
@@ -15,9 +18,10 @@ firebase.initializeApp(config);
 class App extends React.Component {
     render() {
         return(
-            <div>
-                <Header/>
-                <UserList/>
+            <div className='wrapper'>
+                <Header />
+                <UserControl/>
+                <UserList />
             </div>
         )
     }

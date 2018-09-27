@@ -24,7 +24,7 @@ const UserList = createReactClass({
             <ul className='user-list'>
             {
                 this.state.users.map((item) => {
-                    return <User key={item.id} name={item.name} role={item.role} phone={item.phone} birthday={item.birthday}/>;
+                    return <User key={item['.key']} name={item.name} role={item.role} phone={item.phone} birthday={item.birthday}/>;
                 })
             }
             </ul>
