@@ -10,6 +10,7 @@ export default class User extends React.Component {
                     <div className='user-list__role'>{this.props.user.role}</div>
                     <div className='user-list__phone'>{this.props.user.phone}</div>
                     <div className='user-list__birthday'>{this.props.user.birthday}</div>
+                    {this.props.user.isArchive ? <div className='user-list__archive'>В архиве</div> : null}
                 </Link>
             </li>
 
