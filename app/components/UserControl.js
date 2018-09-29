@@ -1,17 +1,13 @@
 import React from 'react';
-import UserForm from "./UserForm";
+import {Link} from 'react-router-dom';
+import FilterForm from './FilterForm'
 
 export default class UserControl extends React.Component {
     render() {
-        const _createNewUser = () => {
-            console.log('_createNewUser');
-        };
-
         return(
             <div className='user-control'>
-                <div className='user-control__search-form'></div>
-                <button className='user-control__create-user-btn' onClick={_createNewUser}>Добавить нового пользователя</button>
-                <UserForm />
+                <FilterForm filterHandler={this.props.filterHandler} />
+                <Link to='/user-form-create'>Добавить нового пользователя</Link>
             </div>
         )
     }

@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {HashRouter, Switch, Route, Link} from 'react-router-dom';
 import firebase from 'firebase';
-import Header from './Header';
 import UserList from './UserList';
-import UserControl from './UserControl';
+import UserForm from './UserForm';
 import ErrorBoundary from './ErrorBoundary';
 import style from './../less/style.less'
+
 
 
 const config = {
@@ -16,17 +17,29 @@ const config = {
 firebase.initializeApp(config);
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    _onClickUser() {
+        App.editedUser = this.props.user;
+    }
+
     render() {
         return(
-            <div className='wrapper'>
-                <Header />
-                <UserControl/>
-                <UserList />
-            </div>
+            <Switch>
+                <Route exact path='/' component={(props) => <UserList {...props} onClickUser={this._onClickUser} />}/>
+                <Route path='/user-form-create' component={(props) => <UserForm {...props} isNewUser={true} editedUser={null} />}/>
+                <Route path='/user-form-edit' component={(props) => <UserForm {...props} isNewUser={false} editedUser={App.editedUser} />}/>
+            </Switch>
         )
     }
 }
 
 ReactDOM.render(
-    <App/>, document.getElementById('app')
+    (
+        <HashRouter>
+            <App />
+        </HashRouter>
+    ), document.getElementById('app')
 )

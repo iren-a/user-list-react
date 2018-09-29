@@ -33,6 +33,8 @@
     "react-dom": "^16.5.2",
     "react-fire": "^1.1.2",
     "react-mixin": "^4.0.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "reactfire": "^1.0.0",
     "style-loader": "^0.23.0",
     "webpack": "^4.20.2",
