@@ -5,9 +5,9 @@ import FilterForm from './FilterForm'
 export default class UserControl extends React.Component {
     render() {
         return(
-            <div className='user-control'>
+            <div className='user-list__control'>
+                <Link className='btn' to='/user-form-create'>Добавить нового пользователя</Link>
                 <FilterForm filterHandler={this.props.filterHandler} />
-                <Link to='/user-form-create'>Добавить нового пользователя</Link>
             </div>
         )
     }

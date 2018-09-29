@@ -70,30 +70,42 @@ export default class UserForm extends React.Component {
 
         return(
             <form className='user-form' onSubmit={this._submitForm.bind(this)}>
-                <label htmlFor="name">Имя</label>
-                <input type="text" id="name" defaultValue={user.name} required ref={(input) => this._name = input}/>
-                <label htmlFor="phone">Телефон</label>
-                <input type="text" id="phone" defaultValue={user.phone} placeholder="+7 (ХХХ) ХХХ-XXXX" pattern="^(\+7) \([0-9]{3}\) [0-9]{3}-[0-9]{4}" required ref={(input) => this._phone = input}/>
-                <label htmlFor="birthday">Дата рождения</label>
-                <input type="text" id="birthday" defaultValue={user.birthday} placeholder="дд.мм.гггг" pattern="[0-9]{2}\.[0-9]{2}\.[0-9]{4}" required ref={(input) => this._birthday = input}/>
-                <label htmlFor="role">Специальность</label>
-                <select name="role-name" id="role" defaultValue={user.role} required ref={(input) => this._role = input}>
-                    <option value="designer">Дизайнер</option>
-                    <option value="developer">Разработчик</option>
-                    <option value="manager">Контент-менеджер</option>
-                </select>
-                <label htmlFor="is-archive">В архиве?</label>
-                {
-                    user.isArchive ?
-                        <input type="checkbox" name="status-toggle" value="status" id="is-archive" defaultChecked ref={(input) => this._isArchive = input}/> :
-                        <input type="checkbox" name="status-toggle" value="status" id="is-archive" ref={(input) => this._isArchive = input}/>
-                }
-                {
-                    this.props.isNewUser ?
-                        <button type="submit">Сохранить</button> :
-                        <button type="submit">Редактировать</button>
-                }
-                <button type="button" onClick={this._cancel.bind(this)}>Отмена</button>
+                <div className='user-form__fieldset'>
+                    <label className='user-form__label' htmlFor="name">Имя</label>
+                    <input type="text" id="name" defaultValue={user.name} required ref={(input) => this._name = input}/>
+                </div>
+                <div className='user-form__fieldset'>
+                    <label className='user-form__label' htmlFor="phone">Телефон</label>
+                    <input type="text" id="phone" defaultValue={user.phone} placeholder="+7 (ХХХ) ХХХ-XXXX" pattern="^(\+7) \([0-9]{3}\) [0-9]{3}-[0-9]{4}" required ref={(input) => this._phone = input}/>
+                </div>
+                <div className='user-form__fieldset'>
+                    <label className='user-form__label' htmlFor="birthday">Дата рождения</label>
+                    <input type="text" id="birthday" defaultValue={user.birthday} placeholder="дд.мм.гггг" pattern="[0-9]{2}\.[0-9]{2}\.[0-9]{4}" required ref={(input) => this._birthday = input}/>
+                </div>
+                <div className='user-form__fieldset'>
+                    <label className='user-form__label' htmlFor="role">Специальность</label>
+                    <select name="role-name" id="role" defaultValue={user.role} required ref={(input) => this._role = input}>
+                        <option value="designer">Дизайнер</option>
+                        <option value="developer">Разработчик</option>
+                        <option value="manager">Контент-менеджер</option>
+                    </select>
+                </div>
+                <div className='user-form__fieldset'>
+                    <label className='user-form__label' htmlFor="is-archive">В архиве?</label>
+                    {
+                        user.isArchive ?
+                            <input type="checkbox" name="status-toggle" value="status" id="is-archive" defaultChecked ref={(input) => this._isArchive = input}/> :
+                            <input type="checkbox" name="status-toggle" value="status" id="is-archive" ref={(input) => this._isArchive = input}/>
+                    }
+                </div>
+                <div className='user-form__button-container'>
+                    {
+                        this.props.isNewUser ?
+                            <button className='btn' type="submit">Сохранить</button> :
+                            <button className='btn' type="submit">Редактировать</button>
+                    }
+                    <button className='btn' type="button" onClick={this._cancel.bind(this)}>Отмена</button>
+                </div>
             </form>
         )
     }

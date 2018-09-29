@@ -1,21 +1,56 @@
 .user-list {
+  .container();
+}
 
+.user-list__header{
+  font-size: 24px;
+  font-weight: bold;
+  color: @color-sea-green-dark;
+}
+
+.user-list__control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-list__users {
+  padding: 0;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
 }
 
 .user-list__item {
-  width: 70%;
+  width: 300px;
   margin-bottom: 50px;
   padding: 15px 30px;
   list-style: none;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.5);
-  border-radius: 10px;
+  color: @color-dark-grey;
 
   &:hover {
-    background-color: azure;
+    background-color: @color-sea-green-light;
     cursor: pointer;
   }
+
+  &--archive {
+    color: @color-gray;
+  }
+}
+
+
+.user-list__link {
+  text-decoration: none;
+  color: inherit;
 }
 
 .user-list__name {
   font-size: 24px;
+}
+
+@media @tablet-width {
+  .user-list__header{
+    font-size: 30px;
+  }
 }

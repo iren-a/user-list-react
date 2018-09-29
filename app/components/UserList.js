@@ -49,10 +49,10 @@ const UserList = createReactClass({
         }
 
         return(
-            <div className='wrapper'>
+            <div className='user-list'>
                 <Header />
                 <UserControl filterHandler={this._filterHandler} />
-                <ul className='user-list'>
+                <ul className='user-list__users'>
                     {
                         users.map((item) => {
                             return <User onClickUser={this.props.onClickUser} key={item['.key']} user={item}/>;
